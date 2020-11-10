@@ -9,8 +9,8 @@ if (temperature <= 4):
 	print("water's state is solid (ice)")
 
 elif (teperature < 100):
-	# water is 
-	print("water's state is liquid")
+	# water is liquid
+	print("water's state is liquid (liquid)")
 else:
 	# water is boiling, so it's steam
 	print("water is vapor")

@@ -15,6 +15,24 @@ total_lives = 5
 
 player = False; # True and False are Booleans - data types that can be truthy or falsy
 
+# define a win / lose function and refer to it (invoke it) in our game loop
+def winorlose(status):
+	# print("called winorlose", status)
+
+	if status = "won":
+		pre_message = "You are the yuuugest winner ever!"
+	else:
+		pre_message = "You done trumped it, loser! "
+
+	print(pre_message + "Would you like to play again?")
+
+	choice = input("Y / N? ")
+
+	if choice == "Y" or choice == "y"
+
+	print("You", status, "! Would you like to play again?")
+		choice = input("Y / N? ")
+
 # set up our game loop
 while player is False:
 	# this is the player choice
@@ -73,38 +91,42 @@ while player is False:
 
 	# check player lives and Computer lives
 	if player_lives == 0:
-		print("You lost! Loser. Would you like to play again?")
-		choice = input ("Y / N? ")
+		winorlose("lost")
+		
+		# print("You lost! Loser. Would you like to play again?")
+		# choice = input ("Y / N? ")
 
-		if choice == "Y" or choice == "y":
-			# reset the game and start over again
-			player_lives = 5
-			computer_lives = 5
-			player = False
+		# if choice == "Y" or choice == "y":
+		# 	# reset the game and start over again
+		# 	player_lives = 5
+		# 	computer_lives = 5
+		# 	player = False
 
-		elif choice == "N" or choice == "n":
-			# exit message and quit
-			print("You chose to quit. Better luck next time!")
-			exit()
-		else:
-			print("Make a valid choice - Y or N")
+		# elif choice == "N" or choice == "n":
+		# 	# exit message and quit
+		# 	print("You chose to quit. Better luck next time!")
+		# 	exit()
+		# else:
+		# 	print("Make a valid choice - Y or N")
 
 	elif computer_lives == 0:
-		print("You won! Winner. Would you like to play again?")
-		choice = input ("Y / N? ")
+		winorlose("won")
 
-		if choice == "Y" or choice == "y":
-			# reset the game and start over again
-			player_lives = 5
-			computer_lives = 5
-			player = False
+		# print("You won! Winner. Would you like to play again?")
+		# choice = input ("Y / N? ")
 
-		elif choice == "N" or choice == "n":
-			# exit message and quit
-			print("You chose to quit. Better luck next time!")
-			exit()
-		else:
-			print("Make a valid choice - Y or N")
+		# if choice == "Y" or choice == "y":
+		# 	# reset the game and start over again
+		# 	player_lives = 5
+		# 	computer_lives = 5
+		# 	player = False
+
+		# elif choice == "N" or choice == "n":
+		# 	# exit message and quit
+		# 	print("You chose to quit. Better luck next time!")
+		# 	exit()
+		# else:
+		# 	print("Make a valid choice - Y or N")
 
 	else:
 		player = False

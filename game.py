@@ -13,25 +13,33 @@ computer_lives = 5
 
 total_lives = 5
 
-player = False; # True and False are Booleans - data types that can be truthy or falsy
-
-# define a win / lose function and refer to it (invoke it) in our game loop
+# define a win or lose function
 def winorlose(status):
-	# print("called winorlose", status)
+	# print("inside winorlose functions: status is: ", status)
 
-	if status = "won":
-		pre_message = "You are the yuuugest winner ever!"
+	print("You" , status, "! Would you like to play again?")
+	choice = input ("Y / N? ")
+
+	if choice == "Y" or choice == "y":
+		# reset the game and start over again
+		global player_lives
+		global computer_lives
+		global player
+
+		player_lives = 5
+		computer_lives = 5
+		player = False
+
+	elif choice == "N" or choice == "n":
+		# exit message and quit
+		print("You chose to quit. Better luck next time!")
+		exit()
 	else:
-		pre_message = "You done trumped it, loser! "
+		print("Make a valid choice - Y or N")
+		#this wil generate a bug that we need to fix later
+		choice = input("Y / N: ")
 
-	print(pre_message + "Would you like to play again?")
-
-	choice = input("Y / N? ")
-
-	if choice == "Y" or choice == "y"
-
-	print("You", status, "! Would you like to play again?")
-		choice = input("Y / N? ")
+player = False; # True and False are Booleans - data types that can be truthy or falsy
 
 # set up our game loop
 while player is False:
@@ -92,22 +100,8 @@ while player is False:
 	# check player lives and Computer lives
 	if player_lives == 0:
 		winorlose("lost")
+
 		
-		# print("You lost! Loser. Would you like to play again?")
-		# choice = input ("Y / N? ")
-
-		# if choice == "Y" or choice == "y":
-		# 	# reset the game and start over again
-		# 	player_lives = 5
-		# 	computer_lives = 5
-		# 	player = False
-
-		# elif choice == "N" or choice == "n":
-		# 	# exit message and quit
-		# 	print("You chose to quit. Better luck next time!")
-		# 	exit()
-		# else:
-		# 	print("Make a valid choice - Y or N")
 
 	elif computer_lives == 0:
 		winorlose("won")
@@ -127,6 +121,9 @@ while player is False:
 		# 	exit()
 		# else:
 		# 	print("Make a valid choice - Y or N")
+		# this wi;; generate a bug that we need to fix later
+		# choice = input("Y / N: ")
+
 
 	else:
 		player = False

@@ -2,7 +2,7 @@
 from random import randint
 
 # re-import our game variables
-from gameComponents import gameVars, winLose
+from gameComponents import gameVars, winLose, comparisons
 
 # set up our game loop
 while gameVars.player is False:
@@ -12,6 +12,7 @@ while gameVars.player is False:
 	print("Player Lives:", gameVars.player_lives, "/", gameVars.total_lives)
 	print("======================")
 	print("Choose your weapon! or type quit to exit\n")
+	
 	gameVars.player = input ("Choose rock, paper or scissors: \n")
 
 	# if the player chooses to quit, then don't do anything else
@@ -33,32 +34,7 @@ while gameVars.player is False:
 	# validate that the random choice worked for the Computer
 	print("Computer chose: " + computer)
 
-	if (computer == gameVars.player):
-		print("tie")
-	# always check for negative conditions first (the losing case)
-	elif (computer == "rock"):
-		if (gameVars.player == "scissors"):
-			gameVars.player_lives -= 1
-			print("you lose! gameVars.player lives: ", gameVars.player_lives)
-		else:
-			print("you win!")
-			gameVars.computer_lives -= 1
-
-	elif (computer == "paper"):
-		if (gameVars.player == "rock"):
-			gameVars.player_lives -= 1
-			print("you lose! gameVars.player lives: ", gameVars.player_lives)
-		else:
-			print("you win!")
-			gameVars.computer_lives -= 1
-
-	elif (computer == "scissors"):
-		if (gameVars.player == "paper"):
-			gameVars.player_lives -= 1
-			print("you lose! gameVars.player lives: ", gameVars.player_lives)
-		else:
-			print("you win!")
-			gameVars.computer_lives -= 1
+	comparisons.comparisonfn(gameVars.player)
 
 	# check gameVars.player lives and computer lives
 	if gameVars.player_lives == 0:
@@ -69,5 +45,8 @@ while gameVars.player is False:
 
 	else:
 		gameVars.player = False
+
+	print("player lives:", gameVars.player_lives, "lives left")
+	print("computer lives:", gameVars.computer_lives, "lives left")
 	
 
